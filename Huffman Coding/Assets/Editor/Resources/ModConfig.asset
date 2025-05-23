@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 615501dbe4f3fe94fbf4b564abb10237, type: 3}
+  m_Name: ModConfig
+  m_EditorClassIdentifier: 
+  id: huffmanCoding
+  title: Huffman Coding
+  author: Axiomatic
+  description: "When every bit counts\u2026 literally.\n\nApply Huffman coding to
+    six symbols and submit the coding efficiency at the right time.\n\nCredits and
+    manual to follow. Testing only!\n\nmoduleId: huffmanCoding\n\nThe manual can be
+    found in the manuals folder of the game or at ktane.timwi.de.\nContact Axiomatic
+    (xmtc) on Discord if there are any bugs."
+  version: 1.0
+  outputFolder: build
+  previewImage: {fileID: 2800000, guid: b5cdc2da676b8c14b9f8537e2ba7934f, type: 3}
