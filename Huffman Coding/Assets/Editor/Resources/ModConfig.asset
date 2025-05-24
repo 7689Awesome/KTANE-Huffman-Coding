@@ -14,11 +14,11 @@ MonoBehaviour:
   id: huffmanCoding
   title: Huffman Coding
   author: Axiomatic
-  description: "When every bit counts\u2026 literally.\n\nApply Huffman coding to
-    six symbols and submit the coding efficiency at the right time.\n\nCredits and
-    manual to follow. Testing only!\n\nmoduleId: huffmanCoding\n\nThe manual can be
-    found in the manuals folder of the game or at ktane.timwi.de.\nContact Axiomatic
-    (xmtc) on Discord if there are any bugs."
+  description: "When every bit counts\u2026 literally.\r\n\r\nApply Huffman coding
+    to six symbols and submit the coding efficiency at the right time.\r\n\r\nManual
+    to follow!\r\n\r\nmoduleId: huffmanCoding\r\n\r\nThe manual can be found in the
+    manuals folder of the game.\r\nContact Axiomatic (xmtc) on Discord if there are
+    any bugs."
   version: 1.0
   outputFolder: build
   previewImage: {fileID: 2800000, guid: b5cdc2da676b8c14b9f8537e2ba7934f, type: 3}
