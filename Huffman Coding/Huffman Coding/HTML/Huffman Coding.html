@@ -22,7 +22,7 @@
             height: 160px;
             margin: 0 auto;
         }
-        img.half-width {
+        img.full-width {    
             width: 100% !important;
             height: auto !important;
             display: block !important;
@@ -58,7 +58,7 @@
                 <p>Use the reading order to determine the position of the probability of a symbol, starting the count with the first and ending at the sixth.</p>
                 <ul>
                     <li>Take the serial number and convert all letters to their numeric position in the alphabet (A = 1, B = 2, etc.).</li>
-                    <li>Then, add the value of the nth character of the serial number, in reading order, to the probability of the nth symbol.</li>
+                    <li>Then, add the value of the (first/second/.../sixth) character of the serial number, in reading order, to the probability of the (first/second/.../sixth) symbol.</li>
                 </ul>
                 <p>Afterwards, apply the following rules in succession. Use the modified probabilities from the previous step as the new values for the next step.</p>
                 <ul>
@@ -90,19 +90,19 @@
             <div class="page-content">
                 <h3>Step 2: Normalize the Current Set of Probabilities</h3>
                 <ul>
-                <li>After all applicable rules have been applied, take the sum of all current probabilities and divide each probability by this sum, rounding each to the nearest whole number.
+                <li>After all applicable rules have been applied, take the sum of all current probabilities, divide each probability by this sum, and multiply each by 100, rounding each to the nearest whole number.
                 <ul>
                     <li>A decimal of exactly .50 rounds to the next whole number.</li>
                 </ul>
                 </li>
-                <li>After this step, the sum of the probabilities should equal 100%.</li>
-                <li>If not, add or subtract the necessary value to the probability of a6 for the sum of the probabilities to equal 100%.</li>
+                <li>After this step, the sum of the probabilities should equal 100.</li>
+                <li>If not, add or subtract the necessary value to the probability of the sixth symbol for the sum of the probabilities to equal 100.</li>
                 <li>Let a<sub>n</sub> be the nth symbol in reading order.</li>
                 </ul>
 
                 <h3>Step 3: Calculate the Entropy (H)</h3>
                 <ul>
-                <li>Taking the probabilities obtained in Step 2 as percentages, multiply each probability by the log-base-2 of its reciprocal.
+                <li>Taking the probabilities obtained in Step 2 as percentages (or their decimal equivalents), multiply each probability by the log-base-2 of its reciprocal.
                 <ul>
                     <li><b><u>Do not round these values.</u></b></li>
                 </ul>
@@ -124,7 +124,7 @@
                     <li>For every sum of probabilities throughout the procedure, including the two probabilities in the rightmost column, assign the upper branch to have a binary 0 and the lower branch to have a binary 1.</li>
                     <li>Working backwards by starting from the column to the left of the rightmost column, for every probability:
                         <ol type="a">
-                            <li>If the current probability is summed to form a probability on the column to its right, append the binary value from that summed probability to the beginning of its current code.</li>
+                            <li>If the current probability is summed to form a probability on the column to its right, <b>PREPEND</b> the binary value from that summed probability to the beginning of its current code.</li>
                             <li>Otherwise, copy the binary value assigned to the same probability from the column to its right.</li>
                         </ol>
                     </li>
@@ -139,24 +139,34 @@
                 <span class="page-header-section-title">Huffman Coding</span>
             </div>
             <div class="page-content">
-                <p>The binary codes associated with each symbol will be used in the succeeding step.</p>
-                <p>See an example of how to use the algorithm in Appendix HUFFMAN.</p>
-
+                <ul>
+                <li>The binary codes associated with each symbol will be used in the succeeding step.</li>
+                <li>See an example of how to use the algorithm in Appendix HUFFMAN.</li>
+                </ul>
                 <h3>Step 5: Calculate the Average Codeword Length (L)</h3>
-                <p>Using the probabilities and binary codes obtained in the leftmost column of the Huffman Coding algorithm in Step 4, multiply the probability of each symbol by the number of bits its binary code contains.</p>
-                <p>Add all of these values and round them to three decimal places.</p>
-                <p>The result of this operation is the average codeword length, L, in bits.</p>
-
+                <ul>
+                <li>Using the probabilities and binary codes obtained in the leftmost column of the Huffman Coding algorithm in Step 4, multiply the probability of each symbol by the number of bits its binary code contains.
+                    <ul>
+                    <li><b><u>Do not round these values.</u></b></li>
+                    </ul>
+                </li>
+                <li>Add all of these values and round the sum to three decimal places.</li>
+                <li>The result of this operation is the average codeword length, L, in bits.</li>
+                </ul>
                 <h3>Step 6: Calculate the Coding Efficiency</h3>
-                <p>Divide H by L, then multiply the result by 100% to determine the coding efficiency. Round this value to two decimal places.</p>
-                <p>Input this value into the module for submission.</p>
-
+                <ul>
+                <li>Divide H by L, then multiply the result by 100% to determine the coding efficiency. Round this value to two decimal places.</li>
+                <li>Input this value into the module for submission.</li>
+                </ul>         
                 <h3>Step 7: Additional Rules</h3>
-                <p>Using the coding efficiency obtained at the end of Step 6, omit the decimal point and calculate the digital root of this value.</p>
+                <ul>
+                <li>Using the coding efficiency obtained at the end of Step 6, omit the decimal point and calculate the digital root of this value.
                 <ul>
                     <li>If the number of strikes is even, submit the percentage when the last digit of the timer matches the said digital root.</li>
                     <li>Otherwise, submit the percentage at any time.</li>
                 </ul>
+                </ul>
+                </li>
             </div>
             <div class="page-footer relative-footer">Page 3 of 6</div>
         </div>
@@ -172,10 +182,10 @@
                 a<sub>1</sub>: 25%, a<sub>2</sub>: 10%, a<sub>3</sub>: 20%, a<sub>4</sub>: 5%, a<sub>5</sub>: 35%, a<sub>6</sub>: 5%.</p>
                 
                 <p>After Step E:</p>
-                <img src="img/Component/1 (After Step E).jpg" class="half-width">
+                <img src="img/Component/1 (After Step E).jpg" class="full-width">
 
                 <p>After Step F:</p>
-                <img src="img/Component/2 (After Step F).jpg" class="half-width">
+                <img src="img/Component/2 (After Step F).jpg" class="full-width">
             </div>
             <div class="page-footer relative-footer">Page 4 of 6</div>
         </div>
@@ -187,10 +197,10 @@
             </div>
             <div class="page-content">
                 <p>Applying Step G to Column 4:</p>
-                <img src="img/Component/3 (Applying Step G to Column 4).jpg" class="half-width">
+                <img src="img/Component/3 (Applying Step G to Column 4).jpg" class="full-width">
 
                 <p>Applying Step G to Column 3:</p>
-                <img src="img/Component/4 (Applying Step G to Column 3).jpg" class="half-width">
+                <img src="img/Component/4 (Applying Step G to Column 3).jpg" class="full-width">
             </div>
             <div class="page-footer relative-footer">Page 5 of 6</div>
         </div>
@@ -202,10 +212,10 @@
             </div>
             <div class="page-content">
                 <p>Applying Step G to Column 2:</p>
-                <img src="img/Component/5 (Applying Step G to Column 2).jpg" class="half-width">
+                <img src="img/Component/5 (Applying Step G to Column 2).jpg" class="full-width">
 
                 <p>Finally, applying Step G to Column 1:</p>
-                <img src="img/Component/6 (Finally, applying Step G to Column 1).jpg" class="half-width">
+                <img src="img/Component/6 (Finally, applying Step G to Column 1).jpg" class="full-width">
 
                 <p>Thus: a<sub>1</sub>: 01, a<sub>2</sub>: 110, a<sub>3</sub>: 10, a<sub>4</sub>: 1110, a<sub>5</sub>: 00, a<sub>6</sub>: 1111</p>
 
